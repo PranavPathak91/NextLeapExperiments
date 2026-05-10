@@ -32,7 +32,17 @@
       "Bash(gh pr *)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(ls -la /Users/pranav/NextLeapExperiments/.claude/worktrees/fervent-dubinsky-f22c80/.claude/ && ls /Users/pranav/.claude/skills/ 2>/dev/null | head -30)",
+      "Bash(mkdir -p /Users/pranav/NextLeapExperiments/.claude/worktrees/fervent-dubinsky-f22c80/JobMatch/.claude/skills/cv-ingest && ls /Users/pranav/NextLeapExperiments/.claude/worktrees/fervent-dubinsky-f22c80/JobMatch/)",
+      "Bash(mkdir -p /Users/pranav/NextLeapExperiments/.claude/worktrees/fervent-dubinsky-f22c80/JobMatch/.claude/skills/job-search)",
+      "WebFetch(domain:job-boards.greenhouse.io)",
+      "WebFetch(domain:jobs.ashbyhq.com)",
+      "WebFetch(domain:www.workatastartup.com)",
+      "WebFetch(domain:job-boards.eu.greenhouse.io)",
+      "WebFetch(domain:boards.greenhouse.io)",
+      "WebFetch(domain:jobs.lever.co)",
+      "WebFetch(domain:boards.eu.greenhouse.io)"
     ]
   }
 }
