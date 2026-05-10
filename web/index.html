@@ -1,0 +1,1160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Market Intel — 10 May 2026</title>
+<style>
+:root{
+  --bg:#faf8f3;
+  --surface:#ffffff;
+  --ink:#1a1a1a;
+  --ink-2:#3a3a36;
+  --ink-3:#6b6b62;
+  --ink-4:#9a9a8e;
+  --rule:#e8e4dc;
+  --rule-strong:#c9c3b6;
+  --accent:#8b3a1f;
+  --accent-soft:#fbf1e8;
+  --tag-bg:#f0ebe0;
+  --hl:#fff8dc;
+  --serif: 'Iowan Old Style','Charter','Source Serif Pro','Georgia','Cambria',serif;
+  --sans: -apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,'Helvetica Neue',Arial,sans-serif;
+  --mono: ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s ease}
+a:hover{border-bottom-color:var(--accent)}
+
+/* ── Masthead ─────────────────────────────────────────────────── */
+.masthead-wrap{
+  border-bottom:1px solid var(--rule);
+  background:var(--bg);
+}
+.masthead{
+  max-width:1080px;margin:0 auto;
+  padding:32px 40px 24px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.title{
+  font-family:var(--serif);
+  font-size:36px;font-weight:700;letter-spacing:-0.5px;
+  color:var(--ink);
+  line-height:1.05;
+}
+.dateline{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:15px;color:var(--ink-3);
+}
+.meta{
+  margin-top:8px;
+  font-size:13px;color:var(--ink-3);
+  display:flex;flex-wrap:wrap;gap:18px;
+}
+.meta span{display:inline-flex;align-items:center;gap:6px}
+.meta strong{color:var(--ink);font-weight:600}
+
+/* ── Layout ──────────────────────────────────────────────────── */
+.layout{
+  max-width:1080px;margin:0 auto;
+  padding:40px;
+  display:grid;
+  grid-template-columns:200px minmax(0,1fr);
+  gap:48px;
+  align-items:start;
+}
+@media(max-width:880px){
+  .layout{grid-template-columns:1fr;padding:24px;gap:24px}
+  .toc{display:none}
+}
+
+/* ── TOC ─────────────────────────────────────────────────────── */
+.toc{
+  position:sticky;top:24px;
+  font-size:13px;
+}
+.toc h4{
+  margin:0 0 12px;
+  font-family:var(--sans);
+  font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:1.5px;
+  color:var(--ink-4);
+}
+.toc ol{
+  list-style:none;margin:0;padding:0;
+  border-left:1px solid var(--rule);
+}
+.toc li{position:relative}
+.toc li.divider{
+  height:14px;
+  border-top:1px solid var(--rule);
+  margin:8px 0;
+}
+.toc a{
+  display:block;
+  padding:5px 0 5px 14px;
+  color:var(--ink-3);
+  border-bottom:0;
+  transition:color .15s ease;
+}
+.toc a:hover{color:var(--accent)}
+.toc a.active{color:var(--ink);font-weight:600}
+.toc a.active::before{
+  content:'';
+  position:absolute;left:-1px;top:5px;bottom:5px;width:2px;
+  background:var(--accent);
+}
+.toc-num{
+  display:inline-block;width:18px;
+  color:var(--ink-4);font-variant-numeric:tabular-nums;
+}
+
+/* ── Main content ────────────────────────────────────────────── */
+main{min-width:0}
+section.block{margin-bottom:64px}
+section.block:last-child{margin-bottom:24px}
+
+/* Section eyebrows */
+.eyebrow{
+  font-family:var(--sans);
+  font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:2px;
+  color:var(--accent);
+  margin-bottom:10px;
+}
+h2.section-h{
+  font-family:var(--serif);
+  font-size:28px;font-weight:700;letter-spacing:-0.3px;
+  margin:0 0 24px;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ── Today's call ─────────────────────────────────────────────── */
+.calls{display:flex;flex-direction:column;gap:24px}
+.call{
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-left:3px solid var(--accent);
+  padding:22px 26px;
+}
+.call-num{
+  font-family:var(--serif);
+  font-size:13px;color:var(--accent);
+  font-weight:600;letter-spacing:1px;
+  margin-bottom:6px;
+}
+.call h3{
+  margin:0 0 8px;
+  font-family:var(--serif);
+  font-size:19px;font-weight:600;line-height:1.3;
+  color:var(--ink);
+}
+.call p{
+  margin:0 0 10px;
+  font-size:15px;color:var(--ink-2);
+}
+.call .touches{
+  margin-top:12px;
+  font-size:12px;color:var(--ink-3);
+  font-family:var(--sans);
+}
+.call .touches strong{color:var(--ink-2);font-weight:600}
+
+/* ── Themes ──────────────────────────────────────────────────── */
+.themes{display:grid;grid-template-columns:1fr;gap:18px}
+.theme{
+  border:1px solid var(--rule);
+  background:var(--surface);
+  padding:20px 24px;
+}
+.theme-head{
+  font-family:var(--serif);
+  font-size:11px;color:var(--accent);
+  font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:6px;
+}
+.theme h3{
+  font-family:var(--serif);
+  font-size:18px;font-weight:600;line-height:1.3;
+  margin:0 0 10px;
+}
+.theme p{margin:0 0 10px;font-size:14.5px;color:var(--ink-2)}
+.theme .companies{
+  margin-top:10px;font-size:12px;color:var(--ink-3);
+}
+.theme .companies strong{color:var(--ink-2);font-weight:600}
+
+/* ── Status board ────────────────────────────────────────────── */
+.status{
+  border:1px solid var(--rule);
+  background:var(--surface);
+  font-size:14px;
+}
+.status .row{
+  display:grid;
+  grid-template-columns:140px 70px 1fr;
+  gap:16px;
+  padding:14px 22px;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.status .row:last-child{border-bottom:0}
+.status .row.head{
+  font-family:var(--sans);
+  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--ink-4);font-weight:600;
+  background:transparent;
+  padding:12px 22px;
+}
+.status .name{
+  font-family:var(--serif);
+  font-weight:600;font-size:16px;color:var(--ink);
+}
+.status .count{
+  font-variant-numeric:tabular-nums;
+  font-family:var(--mono);
+  font-size:12px;color:var(--ink-3);
+}
+.status .tldr{color:var(--ink-2);font-size:14px;line-height:1.5}
+
+/* ── Company brief ───────────────────────────────────────────── */
+.company{
+  margin-bottom:64px;
+  scroll-margin-top:24px;
+}
+.company-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:24px;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--rule);
+  margin-bottom:24px;
+}
+.company-name{
+  font-family:var(--serif);
+  font-size:32px;font-weight:700;letter-spacing:-0.5px;line-height:1;
+  margin:0;
+}
+.company-meta{
+  font-size:12px;color:var(--ink-3);
+  font-family:var(--sans);
+  text-align:right;
+}
+.company-meta div+div{margin-top:2px}
+
+/* Markdown rendered content */
+.md{font-size:15.5px;color:var(--ink-2);line-height:1.65}
+.md h1{display:none} /* the page already has the company name */
+.md > p:first-of-type{
+  /* the "Domain · Relationship · Lens" line */
+  font-size:13px;color:var(--ink-3);
+  margin:0 0 22px;
+  font-family:var(--sans);
+}
+.md h2{
+  font-family:var(--serif);
+  font-size:18px;font-weight:600;letter-spacing:-0.2px;
+  color:var(--ink);
+  margin:28px 0 10px;
+  padding-top:0;
+}
+.md h2 + ul{margin-top:6px}
+.md ul{margin:0 0 14px;padding-left:22px}
+.md li{margin:6px 0;color:var(--ink-2)}
+.md li strong{color:var(--ink);font-weight:600}
+.md p{margin:0 0 12px}
+.md a{color:var(--accent);border-bottom:1px solid transparent}
+.md a:hover{border-bottom-color:var(--accent)}
+.md strong{font-weight:600;color:var(--ink)}
+.md em{color:var(--ink-3);font-style:italic}
+.md hr{display:none}
+.md table{
+  width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;
+}
+.md table th,.md table td{
+  text-align:left;padding:8px 12px;
+  border-bottom:1px solid var(--rule);
+  vertical-align:top;
+}
+.md table th{
+  font-family:var(--sans);font-weight:600;
+  font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-4);
+}
+.md code{
+  font-family:var(--mono);font-size:0.92em;
+  background:var(--tag-bg);padding:1px 5px;
+}
+
+/* TL;DR highlight */
+.md h2.tldr-h{
+  font-size:13px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--accent);font-family:var(--sans);font-weight:600;
+  margin-bottom:10px;
+}
+.tldr-block{
+  background:var(--accent-soft);
+  padding:18px 22px;
+  border-left:3px solid var(--accent);
+  margin:0 0 24px;
+}
+.tldr-block ul{margin:0;padding-left:18px}
+.tldr-block li{margin:8px 0;font-size:15.5px;color:var(--ink)}
+.tldr-block li strong{color:var(--ink)}
+
+/* "What this means" emphasis */
+.takeaway{
+  background:#fbfaf6;
+  border:1px solid var(--rule);
+  padding:18px 22px;
+  margin:24px 0 0;
+}
+.takeaway > h2{
+  font-size:13px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--ink-3);font-family:var(--sans);font-weight:600;
+  margin:0 0 10px;
+}
+.takeaway ul{margin:0;padding-left:18px}
+.takeaway li{margin:8px 0;font-size:15px}
+
+/* Collapsible detail sections */
+details{
+  margin:0 0 4px;
+  border-top:1px solid var(--rule);
+}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+details > summary{
+  list-style:none;
+  cursor:pointer;
+  padding:14px 0;
+  display:flex;align-items:center;justify-content:space-between;
+  font-family:var(--sans);
+  font-size:13px;font-weight:600;letter-spacing:0.5px;
+  color:var(--ink-2);
+}
+details > summary::-webkit-details-marker{display:none}
+details > summary:hover{color:var(--accent)}
+details > summary .chev{
+  font-family:var(--mono);font-size:11px;color:var(--ink-4);
+  transition:transform .15s ease;
+}
+details[open] > summary .chev{transform:rotate(90deg)}
+details > .body{
+  padding:0 0 16px;
+  font-size:14.5px;color:var(--ink-2);
+}
+details > .body ul{margin:0;padding-left:20px}
+details > .body li{margin:5px 0}
+
+/* Sources block at end */
+.sources-block{
+  margin-top:24px;
+  font-size:12.5px;color:var(--ink-3);
+}
+.sources-block summary{
+  font-family:var(--sans);font-size:12px;letter-spacing:1px;text-transform:uppercase;
+  color:var(--ink-4);font-weight:600;
+  padding:8px 0;
+}
+.sources-block ul{padding-left:18px}
+.sources-block li{margin:3px 0;line-height:1.5}
+.sources-block a{color:var(--ink-3)}
+
+/* Footer */
+footer{
+  border-top:1px solid var(--rule);
+  margin-top:48px;
+  padding:24px 40px;
+  font-size:12px;color:var(--ink-3);
+  text-align:center;
+  font-family:var(--sans);
+  background:var(--bg);
+}
+footer .cmd{
+  font-family:var(--mono);
+  background:var(--tag-bg);
+  padding:2px 8px;
+  color:var(--ink-2);
+}
+</style>
+</head>
+<body>
+
+<div class="masthead-wrap">
+  <div class="masthead">
+    <div class="title">Market Intel</div>
+    <div class="dateline">Sunday · 10 May 2026 · 08:00 local</div>
+    <div class="meta">
+      <span><strong>8</strong> companies</span>
+      <span><strong>84</strong> new items</span>
+      <span><strong>110</strong> sources</span>
+      <span>Lens · Competitive intel · PM, new FM provider</span>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+
+  <aside class="toc">
+    <h4>In this issue</h4>
+    <ol>
+      <li><a href="#today">Today's call</a></li>
+      <li><a href="#themes">Cross-cutting themes</a></li>
+      <li><a href="#status">Status board</a></li>
+      <li class="divider"></li>
+      <li><a href="#openai"><span class="toc-num">01</span>OpenAI</a></li>
+      <li><a href="#anthropic"><span class="toc-num">02</span>Anthropic</a></li>
+      <li><a href="#google"><span class="toc-num">03</span>Google</a></li>
+      <li><a href="#meta"><span class="toc-num">04</span>Meta</a></li>
+      <li><a href="#mistral"><span class="toc-num">05</span>Mistral</a></li>
+      <li><a href="#xai"><span class="toc-num">06</span>xAI</a></li>
+      <li><a href="#deepseek"><span class="toc-num">07</span>DeepSeek</a></li>
+      <li><a href="#cohere"><span class="toc-num">08</span>Cohere</a></li>
+    </ol>
+  </aside>
+
+  <main>
+
+    <!-- TODAY'S CALL -->
+    <section class="block" id="today">
+      <div class="eyebrow">The morning's edit</div>
+      <h2 class="section-h">Today's call</h2>
+      <div class="calls">
+        <div class="call">
+          <div class="call-num">01</div>
+          <h3>Compute scarcity is the new pricing power.</h3>
+          <p>Anthropic locked a 4-year, $1.8B, 300 MW lease on xAI's Colossus 1 (220k+ GPUs) and is publicly citing compute as their growth bottleneck. Alphabet raised 2026 capex to $180–190B; Meta reaffirmed $115–135B + a $27B Nebius/Louisiana JV.</p>
+          <p><em>A new FM provider without a credible compute story is already losing the room.</em></p>
+          <div class="touches"><strong>Touches:</strong> Anthropic, xAI, Google, Meta</div>
+        </div>
+        <div class="call">
+          <div class="call-num">02</div>
+          <h3>DeepSeek's first external raise resets the cost narrative.</h3>
+          <p>Reported $3–7B at a $50B valuation (5× in three weeks), with V4 Pro at $0.435 in / $0.87 out per 1M tokens and cache-hit prices cut to 1/10.</p>
+          <p><em>The "Chinese cost disruptor" thesis now has Western capital scale behind it — undercutting on price alone is no longer a defensible wedge.</em></p>
+          <div class="touches"><strong>Touches:</strong> DeepSeek &middot; indirect: OpenAI, Anthropic, Mistral</div>
+        </div>
+        <div class="call">
+          <div class="call-num">03</div>
+          <h3>xAI is restructuring under fire.</h3>
+          <p>Musk dissolved xAI as a standalone entity (folding into "SpaceXAI"), 11 of 12 cofounders gone, Grok DAU −12% MoM globally / −21% US, two-week deprecation notice for 8 legacy models drew developer backlash. The Anthropic lease is a $5B/yr ARR backstop, but xAI is now functionally a neocloud that also makes models.</p>
+          <p><em>Worth watching: how fast a model lab can be re-platformed under capital duress.</em></p>
+          <div class="touches"><strong>Touches:</strong> xAI, Anthropic</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THEMES -->
+    <section class="block" id="themes">
+      <div class="eyebrow">Pattern across the watchlist</div>
+      <h2 class="section-h">Cross-cutting themes</h2>
+      <div class="themes">
+        <div class="theme">
+          <div class="theme-head">Theme 01</div>
+          <h3>Capital concentration in whales</h3>
+          <p>Anthropic ~$50B round at $900B–$1T &middot; DeepSeek $3–7B at $50B &middot; Cohere/Aleph Alpha $600M (Schwarz lead) &middot; OpenAI $10B JV with TPG &middot; Anthropic $1.5B JV with Blackstone/H&amp;F/Goldman. The funding floor for credible FM work moved up by an order of magnitude in ~10 days.</p>
+          <div class="companies"><strong>Companies:</strong> Anthropic, DeepSeek, Cohere, OpenAI</div>
+        </div>
+        <div class="theme">
+          <div class="theme-head">Theme 02</div>
+          <h3>Regulatory and legal heat is no longer abstract</h3>
+          <p>Five publishers + Scott Turow sued Meta in SDNY over LibGen-sourced Llama training (Zuckerberg personally named). EU AI Act high-risk enforcement delayed to Dec 2027 after a 7-CEO letter (Mistral signed). US Commerce CAISI to evaluate DeepMind / Microsoft / xAI models pre-deployment.</p>
+          <div class="companies"><strong>Companies:</strong> Meta, Mistral, Google, xAI</div>
+        </div>
+        <div class="theme">
+          <div class="theme-head">Theme 03</div>
+          <h3>Pricing is forking, not converging</h3>
+          <p>DeepSeek and xAI cut hard (Grok 4.3 −40–58% vs. prior). Mistral Medium 3.5 priced <em>premium</em> and got HN/Reddit backlash. OpenAI is monetizing through self-serve ads + the TPG deployment JV. Anthropic doubled rate limits and raised Opus API ceilings — capacity, not price, is the lever.</p>
+          <div class="companies"><strong>Companies:</strong> all 8 (every one moved on pricing or packaging)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATUS -->
+    <section class="block" id="status">
+      <div class="eyebrow">Watchlist at a glance</div>
+      <h2 class="section-h">Status board</h2>
+      <div class="status">
+        <div class="row head"><div>Company</div><div>New</div><div>One-line</div></div>
+        <div class="row"><div class="name"><a href="#openai">OpenAI</a></div><div class="count">14 new</div><div class="tldr">Finalized $10B TPG-led deployment JV (17.5% guaranteed return); GPT-5.5 Instant default + Codex on GB200; ChatGPT self-serve ads opened.</div></div>
+        <div class="row"><div class="name"><a href="#anthropic">Anthropic</a></div><div class="count">16 new</div><div class="tldr">$1.8B Akamai compute deal + 4yr SpaceX/Colossus 1 lease; 80× Q1 growth claim; reported $50B round at $900B–$1T; 10 finance agents shipped.</div></div>
+        <div class="row"><div class="name"><a href="#google">Google</a></div><div class="count">12 new</div><div class="tldr">Cloud Next '26: Gemini Enterprise Agent Platform + $750M partner fund; 2026 capex raised to $180–190B; Cloud +63% YoY, gen-AI revenue ~+800%.</div></div>
+        <div class="row"><div class="name"><a href="#meta">Meta</a></div><div class="count">7 new</div><div class="tldr">Hit by NPR/Turow publisher lawsuit citing LibGen + Zuckerberg approval; ~8K layoffs confirmed for May 20 while AI hiring continues.</div></div>
+        <div class="row"><div class="name"><a href="#mistral">Mistral</a></div><div class="count">5 new</div><div class="tldr">Medium 3.5 (128B, 256k, 77.6% SWE-Bench) shipped + Vibe agents; premium pricing drew HN backlash; co-signed EU AI Act delay letter.</div></div>
+        <div class="row"><div class="name"><a href="#xai">xAI</a></div><div class="count">14 new</div><div class="tldr">Dissolved as standalone, folded into SpaceXAI; Grok 4.3 launched at -40–58% pricing; 11/12 cofounders gone; Anthropic now largest revenue customer.</div></div>
+        <div class="row"><div class="name"><a href="#deepseek">DeepSeek</a></div><div class="count">9 new</div><div class="tldr">First external raise: $3-7B at $50B valuation (Tencent + Big Fund III); V4 Pro 75% promo extended; cache-hit prices cut to 1/10.</div></div>
+        <div class="row"><div class="name"><a href="#cohere">Cohere</a></div><div class="count">7 new</div><div class="tldr">Acquiring Aleph Alpha (~$20B combined, $600M Schwarz lead); Canadian gov't ISED deal for 1,400 federal users; CVE-2026-5752 on Terrarium sandbox.</div></div>
+      </div>
+    </section>
+
+    <!-- COMPANIES -->
+    <article class="company" id="openai">
+      <div class="company-head">
+        <h2 class="company-name">OpenAI</h2>
+        <div class="company-meta">
+          <div>openai.com &middot; competitor</div>
+          <div>14 new items</div>
+        </div>
+      </div>
+      <div class="md" data-md-id="md-openai"></div>
+    </article>
+
+    <article class="company" id="anthropic">
+      <div class="company-head">
+        <h2 class="company-name">Anthropic</h2>
+        <div class="company-meta">
+          <div>anthropic.com &middot; competitor</div>
+          <div>16 new items</div>
+        </div>
+      </div>
+      <div class="md" data-md-id="md-anthropic"></div>
+    </article>
+
+    <article class="company" id="google">
+      <div class="company-head">
+        <h2 class="company-name">Google</h2>
+        <div class="company-meta">
+          <div>deepmind.google &middot; competitor</div>
+          <div>12 new items</div>
+        </div>
+      </div>
+      <div class="md" data-md-id="md-google"></div>
+    </article>
+
+    <article class="company" id="meta">
+      <div class="company-head">
+        <h2 class="company-name">Meta</h2>
+        <div class="company-meta">
+          <div>ai.meta.com &middot; competitor</div>
+          <div>7 new items</div>
+        </div>
+      </div>
+      <div class="md" data-md-id="md-meta"></div>
+    </article>
+
+    <article class="company" id="mistral">
+      <div class="company-head">
+        <h2 class="company-name">Mistral</h2>
+        <div class="company-meta">
+          <div>mistral.ai &middot; competitor</div>
+          <div>5 new items</div>
+        </div>
+      </div>
+      <div class="md" data-md-id="md-mistral"></div>
+    </article>
+
+    <article class="company" id="xai">
+      <div class="company-head">
+        <h2 class="company-name">xAI</h2>
+        <div class="company-meta">
+          <div>x.ai &middot; competitor</div>
+          <div>14 new items</div>
+        </div>
+      </div>
+      <div class="md" data-md-id="md-xai"></div>
+    </article>
+
+    <article class="company" id="deepseek">
+      <div class="company-head">
+        <h2 class="company-name">DeepSeek</h2>
+        <div class="company-meta">
+          <div>deepseek.com &middot; competitor</div>
+          <div>9 new items</div>
+        </div>
+      </div>
+      <div class="md" data-md-id="md-deepseek"></div>
+    </article>
+
+    <article class="company" id="cohere">
+      <div class="company-head">
+        <h2 class="company-name">Cohere</h2>
+        <div class="company-meta">
+          <div>cohere.com &middot; competitor</div>
+          <div>7 new items</div>
+        </div>
+      </div>
+      <div class="md" data-md-id="md-cohere"></div>
+    </article>
+
+  </main>
+</div>
+
+<footer>
+  Generated 2026-05-10 08:00 local · 110 sources · diff vs. yesterday: +84 / -0 · re-run with
+  <span class="cmd">/research</span>
+</footer>
+
+<!-- ── Markdown source for each brief ──────────────────────────── -->
+<script type="text/markdown" id="md-openai">
+**Domain:** openai.com · **Relationship:** competitor · **Lens:** competitive_intel (PM, new FM provider)
+
+## TL;DR
+- GPT-5.5-Cyber rolled out May 8 in limited preview to vetted cybersecurity teams, extending the GPT-5.5 family into a verticalized security tier ([CNBC](https://www.cnbc.com/2026/05/07/openai-rolls-out-new-gpt-5point5-cyber-to-vetted-cybersecurity-teams.html)).
+- ChatGPT ads went self-serve on May 5 with cost-per-click bidding, Conversions API, and pixel measurement; UK/MX/BR/JP/KR expansion confirmed May 7 ([Axios](https://www.axios.com/2026/05/05/openai-self-serve-ad-platform), [OpenAI](https://openai.com/index/testing-ads-in-chatgpt/)).
+- Sales leader exited May 4 to Thrive Capital, the latest in a sustained executive turnover wave ([CNBC](https://www.cnbc.com/2026/05/04/open-ai-executive-leaves-thrive-capital.html)).
+
+## News & announcements
+- May 8: OpenAI announced GPT-5.5 and GPT-5.5-Cyber for vetted cybersecurity teams, framed as "trusted access for cyber" ([CNBC](https://www.cnbc.com/2026/05/07/openai-rolls-out-new-gpt-5point5-cyber-to-vetted-cybersecurity-teams.html)).
+- May 7: ChatGPT Trusted Contact safety feature began rollout for personal accounts, surfacing notifications in suicide-risk scenarios ([OpenAI News](https://openai.com/news/)).
+- May 7: OpenAI updated ads policy to confirm UK, Mexico, Brazil, Japan, South Korea ad-pilot expansion in coming weeks.
+
+## Product / feature launches
+- May 5: GPT-5.5 Instant became default ChatGPT model, claimed 52.5% fewer hallucinations than 5.3 Instant on law/medicine/finance prompts ([TechCrunch](https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/)).
+- May 7: Realtime voice trio in API — GPT-Realtime-2 (reasoning), GPT-Realtime-Translate (multilingual), GPT-Realtime-Whisper (streaming STT).
+- Codex now runs on GPT-5.5 atop NVIDIA GB200 NVL72; Chrome extension added for parallel agentic browser work ([NVIDIA Blog](https://blogs.nvidia.com/blog/openai-codex-gpt-5-5-ai-agents/)).
+
+## Hiring & org changes
+- Headcount expansion: 4,500 → 8,000 employees with 653 open roles as of early May [single-source].
+- April triple-exit (Weil/Peebles/Narayanan) still echoing; product chief Fidji Simo on medical leave shapes May leadership vacuum.
+
+## Funding / financial signals
+- May 4: $10B Deployment Company JV finalized with TPG-led PE consortium; $4B PE over 5 years, OpenAI commits up to $1.5B; **17.5% guaranteed annual return** ([Bloomberg](https://www.bloomberg.com/news/articles/2026-05-04/openai-finalizes-10-billion-joint-venture-with-pe-firms-to-deploy-ai)).
+- Anthropic countered same day with $1.5B Blackstone/H&F/Goldman JV.
+- Backdrop: $122B round at $852B post-money closed March 31 (Amazon $50B, Nvidia $30B, SoftBank $30B).
+
+## Pricing & packaging changes
+- May 5: Self-serve Ads Manager beta opened to all US advertisers with CPC bidding, Conversions API, pixel measurement — monetization layer beyond seat pricing ([Axios](https://www.axios.com/2026/05/05/openai-self-serve-ad-platform)).
+- ChatGPT Business preview of Excel/Google Sheets sidebar free through June 2, 2026 — packaged free trial to drive seat conversion.
+- Enterprise tier remains custom-quoted; benchmark ACV ~$561K, ~$40+/seat at 150-seat floor [single-source].
+
+## Public sentiment
+- HN GPT-5.5 launch thread mixed; power users frame model as "work tool not chatbot" while regression complaints persist on coding completeness.
+- Aggregated subreddit sentiment ~60% positive / 25% neutral / 15% critical post-5.5 [single-source].
+- Marketers "largely middling" on ad platform — reach acknowledged, targeting/measurement maturity gap vs Google/Meta flagged ([Raconteur](https://www.raconteur.net/marketing-sales/openai-rolls-out-ads-on-chatgpt-but-marketers-remain-unconvinced)).
+
+## Leadership moves
+- May 4: Sales leader departed for Operator-in-Residence role at Thrive Capital ([CNBC](https://www.cnbc.com/2026/05/04/open-ai-executive-leaves-thrive-capital.html)).
+- Of 11 co-founders, only Altman and Brockman remain operational [single-source].
+
+## Customer wins / logos
+- Deployment Company JV (May 4) targets PE-portfolio embedments in healthcare, logistics, manufacturing, financial services using forward-deployed engineers.
+- OpenAI Frontier customer references include Oracle, State Farm, Uber for company-wide agent deployments.
+- Codex enterprise channel expanded with Accenture, Capgemini, CGI, Cognizant, Infosys, PwC, TCS as deployment partners.
+
+## What this means for us
+- The **Deployment Company + consultancy stack is the real moat to attack**: OpenAI is locking in PE-backed forward-deployed delivery into Fortune 500 ops, so a new FM provider needs a parallel SI/PE motion (or vertical wedge) — pure model-quality leadership won't dislodge embedded teams.
+- Verticalized GPT-5.5-Cyber + ads monetization signals OpenAI is pivoting from horizontal foundation model to "platform with revenue layers." For us, that opens an opening: **developer-trust positioning** (no ads, no upsell pressure, pure API) becomes a differentiated narrative for builders watching ChatGPT's surface get monetized.
+
+## Sources
+- [CNBC — GPT-5.5-Cyber](https://www.cnbc.com/2026/05/07/openai-rolls-out-new-gpt-5point5-cyber-to-vetted-cybersecurity-teams.html) (2026-05-07)
+- [TechCrunch — GPT-5.5 Instant default](https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/) (2026-05-05)
+- [Bloomberg — $10B TPG JV](https://www.bloomberg.com/news/articles/2026-05-04/openai-finalizes-10-billion-joint-venture-with-pe-firms-to-deploy-ai) (2026-05-04)
+- [Axios — Self-serve Ads Manager](https://www.axios.com/2026/05/05/openai-self-serve-ad-platform) (2026-05-05)
+- [CNBC — Sales lead exits to Thrive](https://www.cnbc.com/2026/05/04/open-ai-executive-leaves-thrive-capital.html) (2026-05-04)
+- [TechCrunch — Anthropic + OpenAI JVs](https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/) (2026-05-04)
+- [NVIDIA Blog — Codex on GB200](https://blogs.nvidia.com/blog/openai-codex-gpt-5-5-ai-agents/)
+- [OpenAI — Scaling Codex to enterprises](https://openai.com/index/scaling-codex-to-enterprises-worldwide/)
+- [Raconteur — Marketers on ChatGPT ads](https://www.raconteur.net/marketing-sales/openai-rolls-out-ads-on-chatgpt-but-marketers-remain-unconvinced)
+</script>
+
+<script type="text/markdown" id="md-anthropic">
+**Domain:** anthropic.com · **Relationship:** competitor · **Lens:** competitive_intel (PM, new FM provider)
+
+## TL;DR
+- Anthropic is in a compute-and-capacity sprint: SpaceX Colossus 1 + $1.8B Akamai deal land in same week as 2× rate-limit increases ([Anthropic](https://www.anthropic.com/news/higher-limits-spacex), [Bloomberg](https://www.bloomberg.com/news/articles/2026-05-08/anthropic-inks-1-8-billion-computing-deal-with-akamai)).
+- Wall Street wedge widens: 10 finance agent templates, full M365 add-ins, Moody's native app, Jamie Dimon endorsement ([Anthropic](https://www.anthropic.com/news/finance-agents)).
+- Reported $50B raise at ~$900B–$1T valuation could close within weeks; ARR tracking to $45B ([Tech Startups/FT](https://techstartups.com/2026/05/08/anthropic-eyes-1-trillion-valuation-in-new-funding-round-as-revenue-surges-ft-reports/)).
+
+## News & announcements
+- May 8: Anthropic signs **$1.8B compute contract with Akamai** to handle surging Claude demand ([Bloomberg](https://www.bloomberg.com/news/articles/2026-05-08/anthropic-inks-1-8-billion-computing-deal-with-akamai)).
+- May 8: Fortune reports Anthropic grew 80× in Q1 on annualized basis; Amodei cites compute bottleneck.
+- May 6: Anthropic-SpaceX deal — full Colossus 1 capacity, 220k+ Nvidia GPUs, 300 MW within a month, plus orbital-compute MoU ([Anthropic](https://www.anthropic.com/news/higher-limits-spacex)).
+
+## Product / feature launches
+- May 5: 10 pre-built finance agent templates (pitchbooks, KYC, month-end close) ship as Cowork/Claude Code plugins and Managed Agents cookbooks.
+- May 5: M365 add-ins GA for Excel/PowerPoint/Word; Claude for Outlook in beta; context carries across all four.
+- May 6: Code with Claude SF keynote — Managed Agents gain multi-agent orchestration, outcome metrics, and "Dreaming" self-improving memory in research preview.
+
+## Hiring & org changes
+- ~452 open roles, ~1,500 employees; 100 new EMEA roles (London/Dublin) and first Asia office in Tokyo.
+- Chris Ciauri (ex-Google, ex-Salesforce) MD International; Hidetoshi Tojo named Head of Japan [single-source on Tojo title].
+
+## Funding / financial signals
+- Reported **$50B round at $900B valuation, possibly trending toward $1T** per FT — could close within ~2 weeks.
+- ARR ~$30B today, projected to surpass $45B; up from $9B at end-2025.
+- May 4: $1.5B enterprise AI JV with Blackstone, Hellman & Friedman, Goldman; $300M each from Anthropic, Blackstone, H&F.
+
+## Pricing & packaging changes
+- May 6: Pro/Max/Team/seat-based Enterprise five-hour rate limits doubled; peak-hour throttling removed for Pro/Max; Opus API limits raised "considerably."
+- Ladder unchanged: Free $0, Pro $20, Max 5× $100, Max 20× $200, Team Std $25/seat, Team Premium $125/seat; Max tiers monthly-only.
+
+## Public sentiment
+- Code with Claude SF generated positive technical reception around Managed Agents, "Dreaming" memory, and Orbit assistant; livestream amplified reach.
+- Lingering "Claude-lash" from April Opus 4.7 coding regressions still echoing on Reddit/HN/X.
+- Skeptical HN thread on "Claude Mythos" zero-day claims — Tom's Hardware frames it as marketing rather than capability.
+
+## Leadership moves
+- Daniela Amodei stepped back from day-to-day ops in early 2026, remains on board [single-source].
+- Paul Smith continues as CCO; CPO Ami Vora fronted the Code with Claude SF keynote.
+- No material leadership change in the last 48h.
+
+## Customer wins / logos
+- May 5: JPMorgan's **Jamie Dimon publicly endorses Claude finance agents** at Anthropic's NYC briefing.
+- Data partners now embedded: Moody's (native app), plus Verisk, Third Bridge, Fiscal AI, Dun & Bradstreet, Experian, GLG, Guidepoint, IBISWorld.
+- EPAM signs multi-year deal to build a 10,000-architect Claude practice [single-source].
+- Existing logos referenced: Uber, Netflix scaling Claude Code usage.
+
+## What this means for us
+- Anthropic is not competing on per-token price — they're competing on **vertical workflows + distribution channels** (M365, Moody's, Goldman/Blackstone JV). A new FM provider needs a wedge that doesn't require this scale of partnerships: a horizontal capability gap (latency, context window pricing, on-prem) or a vertical Anthropic isn't lavishing attention on (manufacturing, healthcare ops, public sector).
+- Compute scarcity is their visible weakness — 80× growth, peak-hour throttling only just removed, $1.8B emergency Akamai spend. **Position our reliability/availability SLAs aggressively** to enterprise buyers burned by Anthropic's April rate-limit reshuffles and Opus 4.7 regressions; the "Claude-lash" sentiment is a real wedge for the next 90 days.
+
+## Sources
+- [Anthropic — Higher limits + SpaceX deal](https://www.anthropic.com/news/higher-limits-spacex) (2026-05-06)
+- [Anthropic — Agents for financial services](https://www.anthropic.com/news/finance-agents) (2026-05-05)
+- [Bloomberg — Akamai $1.8B deal](https://www.bloomberg.com/news/articles/2026-05-08/anthropic-inks-1-8-billion-computing-deal-with-akamai) (2026-05-08)
+- [Fortune — 80× growth, Musk data center](https://fortune.com/2026/05/08/anthropic-80fold-growth-quarter-renting-elon-musk-data-center/) (2026-05-08)
+- [Fortune — Wall Street push, Dimon](https://fortune.com/2026/05/05/anthropic-wall-street-financial-services-agents-jamie-dimon/) (2026-05-05)
+- [Tech Startups — $1T valuation FT report](https://techstartups.com/2026/05/08/anthropic-eyes-1-trillion-valuation-in-new-funding-round-as-revenue-surges-ft-reports/) (2026-05-08)
+- [TechCrunch — Anthropic/OpenAI JVs](https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/) (2026-05-04)
+- [Simon Willison — Code w/ Claude live blog](https://simonwillison.net/2026/May/6/code-w-claude-2026/) (2026-05-06)
+- [Tom's Hardware — Claude Mythos critique](https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-claude-mythos-isnt-a-sentient-super-hacker-its-a-sales-pitch-claims-of-thousands-of-severe-zero-days-rely-on-just-198-manual-reviews)
+</script>
+
+<script type="text/markdown" id="md-google">
+**Domain:** deepmind.google · **Relationship:** competitor · **Lens:** competitive_intel (PM, new FM provider)
+
+## TL;DR
+- DeepMind shipped AlphaEvolve "impact" update May 7, claiming 30% genomics error reduction and TPU silicon integration ([deepmind.google](https://deepmind.google/blog/alphaevolve-impact/)).
+- ~1,000 DeepMind UK staff voted **98% to unionize** over Pentagon/IDF Gemini contracts — first frontier-lab union ([Fortune](https://fortune.com/2026/05/05/google-deepmind-unionize-vote-military-ai-contracts-internal-backlash-pentagon-deal-israeli-defense-forces/)).
+- Google I/O on May 19 expected to debut Gemini 4 with native image+video generation.
+
+## News & announcements
+- May 7: DeepMind published AlphaEvolve impact update — Klarna 2× training speed, FM Logistic +10.4% routing efficiency, Spanner write amplification −20%.
+- May 6: DeepMind took minority stake in EVE Online maker (Fenris Creations) for research on long-horizon planning, memory, continual learning ([Bloomberg](https://www.bloomberg.com/news/articles/2026-05-06/google-deepmind-takes-minority-stake-in-maker-of-eve-online)).
+- US Commerce CAISI named DeepMind, Microsoft, xAI as targets for pre-deployment model security evaluations.
+
+## Product / feature launches
+- May 4: Gemini Enterprise Agent Platform announced at Cloud Next '26 — Agent Designer, Inbox, Skills, long-running agents, Agent Gallery with Adobe/Atlassian agents.
+- April 21 (still rolling out): Deep Research + Deep Research Max on Gemini 3.1 Pro via paid Gemini API tiers — MCP support, multimodal input, native HTML/Nano Banana viz.
+- Gemini Embedding 2 hit GA on Gemini API and Vertex AI [single-source].
+
+## Hiring & org changes
+- May 5: ~1,000 DeepMind UK staff voted 98% (CWU members) to unionize; gave management 10 working days to recognize voluntarily.
+- DeepMind currently posting 71+ open roles, including a TechStrat Compute leadership role and a Society/Safety/Responsibility Comms parental-leave cover [single-source].
+
+## Funding / financial signals
+- April 29 Q1 2026 print: Alphabet revenue +22% to $109.9B; Cloud +63% past $20B; gen-AI product revenue **+~800% YoY**.
+- 2026 capex guide raised to **$180–190B** (from $175–185B); Q1 spend $35.7B (+107% YoY); CFO signaled 2027 will "significantly increase."
+- Cloud backlog ~$460B, nearly doubled QoQ; Gemini Enterprise paid MAUs +40% QoQ.
+
+## Pricing & packaging changes
+- Vertex AI: non-global endpoint pricing for GA Gemini 3 and later families takes effect July 1, 2026.
+- Vertex AI Agent Builder: starting Jan 28, 2026, stored session events/memories billed at $0.25 per 1,000 events.
+- Current: Gemini 2.5 Flash-Lite $0.10/$0.40 per M tokens; Gemini 2.5 Pro $1.25/$10.00 per M tokens.
+- $750M Google Cloud partner-innovation fund attached to Gemini Enterprise Agent Platform launch.
+
+## Public sentiment
+- HN top thread on AlphaEvolve impact: praise for grid/quantum results, skepticism on real-world reproducibility outside Google.
+- Press synthesis: sentiment skews positive on direct file creation (Docs/Sheets/PDF/LaTeX); security/prompt-injection concerns persist [single-source].
+- DeepMind union vote drew internal support tied to 600+ employee open letter against Pentagon deal.
+
+## Leadership moves
+- No material signal in the last 48h. Pichai's April 29 earnings remarks reaffirmed AI-infra spend trajectory but no exec changes.
+
+## Customer wins / logos
+- Macquarie Bank: 130,000 staff hours saved in 7 months on Gemini Enterprise.
+- Klarna 2× transformer training speedup, FM Logistic +10.4% routing, Schrödinger ~4× ML force-field speedup via AlphaEvolve.
+- Adobe and Atlassian shipping partner agents in Gemini Enterprise Agent Gallery.
+- Disclosure: 330 Cloud customers each processed >1T tokens in past 12 months.
+
+## What this means for us
+- Google's distribution moat is widening fast — Cloud +63%, $460B backlog, and Adobe/Atlassian agents inside Gemini Enterprise. Competing on raw model quality alone won't move enterprise deals; **we need a partnership/integration wedge** before I/O on May 19 reshuffles attention again.
+- The **DeepMind unionization + Pentagon backlash is an opening for us** with mission-sensitive enterprise buyers (EU public sector, healthcare, ESG-conscious accounts). Position now while Google is publicly entangled in defense-contract optics.
+
+## Sources
+- [DeepMind — AlphaEvolve impact](https://deepmind.google/blog/alphaevolve-impact/) (2026-05-07)
+- [Fortune — DeepMind union vote](https://fortune.com/2026/05/05/google-deepmind-unionize-vote-military-ai-contracts-internal-backlash-pentagon-deal-israeli-defense-forces/) (2026-05-05)
+- [Bloomberg — DeepMind / EVE Online](https://www.bloomberg.com/news/articles/2026-05-06/google-deepmind-takes-minority-stake-in-maker-of-eve-online) (2026-05-06)
+- [The Journal — Gemini Enterprise Agent Platform](https://thejournal.com/articles/2026/05/04/google-announces-new-gemini-enterprise-agent-platform.aspx) (2026-05-04)
+- [Blog Google — Q1 2026 earnings](https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q1-2026/) (2026-04-29)
+- [Vertex AI pricing](https://cloud.google.com/vertex-ai/generative-ai/pricing)
+- [Engadget — DeepMind unionization](https://www.engadget.com/2164765/google-us-military-deepmind-union/) (2026-05-05)
+</script>
+
+<script type="text/markdown" id="md-meta">
+**Domain:** ai.meta.com · **Relationship:** competitor · **Lens:** competitive_intel (PM, new FM provider)
+
+## TL;DR
+- Five major publishers + Scott Turow filed a class action May 5 over Llama training data, citing **82TB of LibGen torrents personally approved by Zuckerberg** ([NPR](https://www.npr.org/2026/05/05/nx-s1-5812623/scott-turow-meta-lawsuit), [Variety](https://variety.com/2026/digital/news/meta-ai-mark-zuckerberg-copyright-infringement-lawsuit-publishers-scott-turow-1236738383/)).
+- May 20 layoff of ~8,000 (10% of HC) lands while Meta reaffirms $115–135B 2026 AI capex and continues hiring AI/ML roles.
+- Muse Spark (closed-weight, MSL-built) remains Meta's flagship; no new Llama release announced — open-weight cadence has stalled.
+
+## News & announcements
+- May 5: Elsevier, Cengage, Hachette, Macmillan, McGraw Hill + Turow sued Meta in SDNY over Llama training data.
+- Complaint cites 82TB of pirated content and alleges Zuckerberg personally authorized LibGen use after killing licensing talks April 2023.
+- Meta's response via PA director Nkechi Nneji: training is fair use; will fight aggressively.
+
+## Product / feature launches
+- No new model launches in last 48h. Muse Spark (April 8) remains the live flagship — natively multimodal, "Contemplating" multi-agent reasoning mode, closed-weight via private API preview.
+- Llama 4 Scout/Maverick (open-weight, MoE, multimodal) remains current open-weight tier; no Llama 5 timeline disclosed.
+
+## Hiring & org changes
+- May 20 layoff of ~8,000 confirmed; impacts Reality Labs, FB social, recruiting, sales, global ops.
+- Meta states it is still hiring for AI, ML, and AI infra roles through the cuts.
+- Parallel "Applied AI Engineering" unit under Maher Saba reports to CTO Bosworth, sits outside Wang's MSL [single-source].
+
+## Funding / financial signals
+- 2026 capex guidance reaffirmed at **$115–135B**, ~2× 2025's $72.2B.
+- $27B Louisiana data-center JV with Nebius referenced as part of AI infra spend.
+- Wall Street pressure: CNBC reports investors want monetization clarity post-Muse Spark.
+
+## Pricing & packaging changes
+- Muse Spark remains free on meta.ai and Meta AI app; private-preview API for partners only — no public pricing yet.
+- Business AI tools still free for SMBs; Zuckerberg flagged future paid tier.
+- Llama 4 license unchanged: 700M MAU cap, EU multimodal carve-out persists.
+
+## Public sentiment
+- r/LocalLLaMA and HN largely negative on Muse Spark closed-weight pivot; community sees open-weight Llama future as uncertain.
+- Press framing of lawsuit is damaging — "Zuckerberg personally authorized" line dominates headlines.
+- Stock reaction earlier was positive: +9% on Muse Spark launch day, strongest single-day move in 2+ years.
+
+## Leadership moves
+- Alexandr Wang (CAIO since June 2025) leads MSL; replaced LeCun who exited late 2025.
+- Maher Saba (ex-Reality Labs) heads parallel Applied AI Engineering unit reporting to Bosworth [single-source].
+- Five Thinking Machines Lab founders hired earlier in 2026; Andrew Tulloch reported $1.5B/6yr package [single-source].
+
+## Customer wins / logos
+- No material signal in the last 48h.
+- Older context: 8M+ advertisers using GenAI ad creative tools; business AI handles 10M conversations/week.
+
+## What this means for us
+- Meta's open-weight pause + lawsuit exposure opens a credibility gap: enterprises wary of Llama provenance are an addressable wedge for a **clean-data foundation model** — lead with training-data attestation in pitches.
+- Closed-weight Muse Spark via private-preview API mirrors OpenAI/Anthropic packaging; **Meta is no longer the "free open-weight floor"** pinning down API pricing — we have more room on price/positioning than 12 months ago.
+
+## Sources
+- [NPR — Turow/publishers sue Meta](https://www.npr.org/2026/05/05/nx-s1-5812623/scott-turow-meta-lawsuit) (2026-05-05)
+- [Variety — Zuckerberg "personally authorized"](https://variety.com/2026/digital/news/meta-ai-mark-zuckerberg-copyright-infringement-lawsuit-publishers-scott-turow-1236738383/) (2026-05-05)
+- [TNW — May 20 layoffs / capex](https://thenextweb.com/news/meta-layoffs-may-2026-ai-restructuring-thousands)
+- [Meta AI blog — Muse Spark](https://ai.meta.com/blog/introducing-muse-spark-msl/) (2026-04-08)
+- [TechCrunch — Business AI 10M convos/week](https://techcrunch.com/2026/04/30/meta-says-its-business-ai-now-facilitates-10-million-conversations-a-week/)
+- [HN — Muse Spark thread](https://news.ycombinator.com/item?id=47692043)
+</script>
+
+<script type="text/markdown" id="md-mistral">
+**Domain:** mistral.ai · **Relationship:** competitor · **Lens:** competitive_intel (PM, new FM provider)
+
+## TL;DR
+- Mistral co-led a CEO push (May 6) that won an **EU AI Act enforcement delay to Dec 2027**, easing near-term compliance load on EU FM providers ([Register](https://www.theregister.com/ai-and-ml/2026/05/07/eu-hits-snooze-on-ai-act-rules-after-industry-backlash/5234530)).
+- Medium 3.5 (Apr 29) is open-weights MIT, 128B dense, 256k ctx, 77.6% SWE-Bench — but $7.50/M output drew sharp HN/Reddit pricing backlash vs. Qwen 3.6.
+- No new funding, leadership, or customer logos in last 48h; revenue trajectory still tracks toward stated $1B 2026 ARR target.
+
+## News & announcements
+- May 7: EU pushed high-risk AI Act enforcement from Aug 2026 to Dec 2, 2027 after CEO letter signed by Mistral, ASML, Airbus, SAP.
+- May 6: Seven EU CEOs incl. Mistral asked Brussels to streamline AI Act, cut GDPR documentation overlap, simplify high-risk classification.
+
+## Product / feature launches
+- Apr 29: Mistral Medium 3.5 public preview — 128B dense, 256k context, vision encoder, configurable reasoning effort per request.
+- Apr 29: Remote agents in Vibe — cloud async coding agents with GitHub/Linear/Jira/Sentry/Slack integrations; CLI sessions "teleport" to cloud.
+- Apr 29: Le Chat "Work mode" — agentic mode for cross-tool research, inbox triage, multi-step tasks.
+- May 5: Voxtral TTS coverage continues — open weights on HF + API at $0.016/1k chars, 20 preset voices.
+
+## Hiring & org changes
+- No material signal in the last 48h. Lever board still active across solutions/revenue roles; no senior moves announced.
+
+## Funding / financial signals
+- No material signal in the last 48h. Last events: $830M debt facility (Mar 30) for 13,800 GB300 GPU Paris cluster; $14B post-money via ASML follow-on (Apr 27).
+- Public 2026 ARR target: >$1B; reported $400M+ ARR exiting 2025, ~60% revenue from Europe [single-source].
+
+## Pricing & packaging changes
+- Apr 29: Medium 3.5 set at **$1.50 input / $7.50 output** per M tokens — premium vs. Mistral Large 3 ($0.50/$1.50) and Medium 3 ($0.40/$2.00).
+- Open weights released under modified MIT (not Apache 2.0) — narrower than Qwen 3.6's Apache 2.0.
+
+## Public sentiment
+- HN/Reddit ML community: pricing for Medium 3.5 "makes zero sense" vs. Chinese open models on benchmarks; quoted as "Mistral brags about how much worse its one is" (Pedro Domingos).
+- Critique theme: no value-prop blog post accompanied launch; positioning as EU-sovereign alternative seen as narrow niche.
+
+## Leadership moves
+- No material signal in the last 48h. Mensch (CEO), Lacroix (CTO) remain in place.
+
+## Customer wins / logos
+- No material signal in the last 48h. Active 2026 logos: Accenture (Feb 26), Ericsson (Feb), French MoD/military, French PM Office chatbot.
+
+## What this means for us
+- Mistral's regulatory lobbying win **buys all EU FM providers ~16 months of breathing room** — we should reframe our EU launch timeline and stop selling "compliance-ready Day 1" as a wedge; the moat is shrinking.
+- Medium 3.5 pricing backlash is our opening: **a same-tier 128B-class model priced under $5/M output with Apache 2.0 weights** would directly counter the "EU-sovereign but expensive" critique Mistral just absorbed.
+
+## Sources
+- [Mistral — Vibe + Medium 3.5](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5) (2026-04-29)
+- [The Register — EU AI Act delay](https://www.theregister.com/ai-and-ml/2026/05/07/eu-hits-snooze-on-ai-act-rules-after-industry-backlash/5234530) (2026-05-07)
+- [GNCrypto — Pricing backlash](https://www.gncrypto.news/news/mistral-128b-medium-3-5-pricing-criticism/)
+- [CNBC — Paris GPU debt facility](https://www.cnbc.com/2026/03/30/mistral-ai-paris-data-center-cluster-debt-financing.html) (2026-03-30)
+- [PricePerToken — Mistral pricing](https://pricepertoken.com/pricing-page/provider/mistral-ai)
+</script>
+
+<script type="text/markdown" id="md-xai">
+**Domain:** x.ai · **Relationship:** competitor · **Lens:** competitive_intel (PM, new FM provider)
+
+## TL;DR
+- xAI **dissolved as standalone entity, folded into "SpaceXAI"** on May 6 alongside a 4-year, ~$5B/yr lease of Colossus 1 to Anthropic ([CNBC](https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html)).
+- Grok 4.3 (April 30) hit the API at $1.25/$2.50 per M tokens with 1M context — ~40% input / ~58% output price cut vs Grok 4.20.
+- 8 legacy Grok models retire May 15 with ~2 weeks' notice; usage down 12% MoM globally and Grok now #5 behind Claude/Gemini/DeepSeek.
+
+## News & announcements
+- May 6: Anthropic-SpaceX compute partnership announced; Anthropic gets all of Colossus 1 (220k+ Nvidia GPUs, 300MW) for 4 years at ~$5B/yr.
+- May 6: Musk announces xAI dissolution; AI products consolidated under "SpaceXAI" sub-brand of SpaceX.
+- May 6: API email to all users — eight legacy models (incl. grok-4, grok-4-fast, grok-3, grok-code-fast-1) retire May 15 12:00 PT.
+
+## Product / feature launches
+- April 30 (live this window): Grok 4.3 on API — 1M-token context, native video input, 3 reasoning intensity levels, no output token cap.
+- May 3: grok-voice-think-fast-1.0 GA on Voice Agent API; tops τ-voice Bench, 25+ languages, custom voice cloning from seconds of audio.
+- May 6: Grok Connectors launch — Google Workspace (Gmail/Drive/Docs/Sheets/Calendar), Notion, GitHub, plus "Bring Your Own MCP."
+- May 8: Grok rolls out to Apple CarPlay with real-time X-platform info access [single-source].
+
+## Hiring & org changes
+- All 11 of 12 original co-founders gone; latest exits Manuel Kroiss and Ross Nordeen in late March.
+- 80+ researchers/engineers departed in recent months including chief engineer Igor Babuschkin; CFO Anthony Armstrong resigned after months.
+- 254 open roles posted; aggressive backfill with "no politics" pitch and high comp.
+
+## Funding / financial signals
+- Anthropic lease projected at **$5B/yr ARR** (some estimates $3-6B) — effectively turns SpaceXAI into a neocloud.
+- Backdrop: $20B Series E closed January 2026 at ~$230B valuation; SpaceX all-stock acquisition Feb 2 valued xAI ~$250B.
+- Consolidation framed as setup for SpaceX IPO [single-source].
+
+## Pricing & packaging changes
+- Grok 4.3: **$1.25 / $2.50** per 1M input/output tokens — vs Grok 4.20 at $2.00 / $6.00 (~40% / ~58% cut).
+- Image input also $1.25/M; 1M context with no output cap repositions cost curve for agentic apps.
+- Enterprise: dedicated API capacity with guaranteed TPM now bookable; Grok Business holds at $30/seat/mo.
+
+## Public sentiment
+- Grok worldwide DAU fell 13.9M (Mar) → 12.2M (Apr), −12%; US down 21%; rank dropped from #2 (Jan) to #5 behind Claude, Gemini, DeepSeek.
+- Developer backlash on May 15 deprecation: 2-week notice for migrators called "disappointing."
+- r/grok complaints on moderation creep and paywalled image/video generation.
+
+## Leadership moves
+- Musk now sole remaining founder; publicly admits xAI "was not built right first time around."
+- Most recent senior hires (March): Andrew Milich and Jason Ginsberg from Cursor, jointly leading product engineering.
+- No new executive announcements in the May 8-10 window.
+
+## Customer wins / logos
+- **Anthropic itself** — 4-year compute lease is effectively xAI's largest "customer" by revenue.
+- Standing wins (older): DoD $200M "Grok for Government" contract (April), Shift4 customer-service partnership.
+- No new enterprise logo announcements in last 48h.
+
+## What this means for us
+- The Anthropic-Colossus deal flips the script: xAI is now a compute landlord renting to a top-tier rival, which means Grok itself is less compute-constrained relative to the field — but also less differentiated as "the company with the biggest cluster." **Our pitch should lean into model quality and developer experience, not raw compute narratives.**
+- Grok 4.3 at $1.25/$2.50 with 1M context is now a serious price floor for frontier-tier reasoning APIs — undercutting Claude Sonnet/GPT-class pricing. **If our launch pricing assumed Grok 4 levels ($2/$6), re-baseline now**; the May 15 deprecation chaos is also a real wedge to court burned Grok devs.
+
+## Sources
+- [xAI — Anthropic compute partnership](https://x.ai/news/anthropic-compute-partnership) (2026-05-06)
+- [CNBC — Anthropic / SpaceX deal](https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html) (2026-05-06)
+- [latent.space — 300MW/$5B deal analysis](https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr) (2026-05-07)
+- [Republic World — xAI dissolved into SpaceXAI](https://www.republicworld.com/tech/musk-says-xai-will-be-dissolved-as-separate-company-ai-products-to-come-under-spacexai) (2026-05-06)
+- [OpenRouter — Grok 4.3 pricing](https://openrouter.ai/x-ai/grok-4.3)
+- [Yahoo Tech — Grok DAU decline](https://tech.yahoo.com/ai/claude/articles/elon-musks-grok-takes-hit-050000178.html)
+- [Fortune — Musk on xAI rebuild](https://fortune.com/2026/03/16/elon-musk-xai-rebuilding-cofounders-engineers-exodus-macrohard-project-spacex-acquisition/) (2026-03-16)
+</script>
+
+<script type="text/markdown" id="md-deepseek">
+**Domain:** deepseek.com · **Relationship:** competitor · **Lens:** competitive_intel (PM, new FM provider)
+
+## TL;DR
+- **First-ever external raise nearing close: ~$3-4B at up to $50B valuation**, Big Fund III lead, Tencent in talks ([SCMP](https://www.scmp.com/tech/tech-trends/article/3352945/deepseek-soon-close-first-external-fundraising-us50b-valuation-sources)).
+- Liang opened the round mainly to issue equity and stop rival poaching of researchers — retention is now a stated bottleneck.
+- V4 Preview (Pro 1.6T/49B-active, Flash 284B/13B-active, 1M context, MIT) shipped April 24 and remains the active offering; V4 Pro carries a 75% promo discount through 2026-05-31.
+
+## News & announcements
+- May 8/9: SCMP/Implicator report fundraise "expected to close soon" at up to $50B; Hillhouse exited talks.
+- May 8: Brief Web/API outage logged on DeepSeek status page, since resolved.
+- May 7: TechNode confirms FT report — Big Fund III leading first external round at ~$45B.
+
+## Product / feature launches
+- No new model launch in last 48h. V4 Preview (Pro + Flash) released 2026-04-24 remains current; legacy `deepseek-chat` and `deepseek-reasoner` retire after 2026-07-24.
+- V4.1 release watch chatter circulating but not officially announced [single-source].
+
+## Hiring & org changes
+- Equity grants now the explicit reason for opening external fundraise — direct response to rivals poaching DeepSeek researchers.
+- Liang still controls ~90% of DeepSeek pre-round; no new exec announcements in 48h window.
+
+## Funding / financial signals
+- Round size: $3-4B, possibly up to $7B per The Information [single-source for $7B].
+- Valuation jumped **5× in three weeks** — $10B to $45-50B.
+- Lead: Big Fund III (state, AI/IC focus); Tencent participating; Alibaba reportedly in talks.
+
+## Pricing & packaging changes
+- V4 Pro 75% promo discount extended to 2026-05-31 15:59 UTC: **input $0.435 / output $0.87** per 1M (cache-hit input $0.003625).
+- V4 Flash unchanged: input $0.14, output $0.28, cache-hit $0.0028 per 1M.
+- 2026-04-26: cache-hit input prices cut to **1/10 of launch price** across all models.
+
+## Public sentiment
+- HN threads on V4 Pro: praised for math/research-grade reasoning, doc quality, and deterministic kernels; concerns on rate-limiting and capacity during preview.
+- Coding benchmark roundup (May 6): V4 Pro placed Tier A at 89/100, ahead of Sonnet 4.5, competitive with Opus 4.6 [single-source].
+
+## Leadership moves
+- No material signal in the last 48h. Liang Wenfeng remains CEO and ~90% owner; no new C-suite or board changes reported.
+
+## Customer wins / logos
+- No new logo announcements in last 48h. Most recent: Aurora Mobile's GPTBots.ai integrated V4 Preview at launch (2026-04-24) for enterprise agents with 50+ business-system connectors.
+
+## What this means for us
+- **Talent risk just inverted**: DeepSeek will issue equity for the first time, funded by a state-backed war chest. Window to recruit their researchers narrows fast — move on any open req targeting their alumni in the next 4-6 weeks before the round closes.
+- Pricing pressure intensifies on May 31 when the V4 Pro 75% promo ends — but they may extend or cut list price to defend share. **Plan our list-price positioning assuming V4 Pro stays at promo levels** (~$0.43 in / $0.87 out); if we can't match within 3-5×, we need a clear non-price wedge (latency SLA, region, eval transparency).
+
+## Sources
+- [SCMP — $50B valuation close](https://www.scmp.com/tech/tech-trends/article/3352945/deepseek-soon-close-first-external-fundraising-us50b-valuation-sources) (2026-05-08)
+- [TechCrunch — $45B valuation](https://techcrunch.com/2026/05/06/deepseek-could-hit-45b-valuation-from-its-first-investment-round/) (2026-05-06)
+- [TechNode — FT report on round](https://technode.com/2026/05/07/deepseek-reportedly-seeks-first-funding-round-at-45-billion-valuation/) (2026-05-07)
+- [DeepSeek API Docs — V4 Preview](https://api-docs.deepseek.com/news/news260424) (2026-04-24)
+- [DeepSeek API Docs — Pricing](https://api-docs.deepseek.com/quick_start/pricing)
+- [HN — DeepSeek V4](https://news.ycombinator.com/item?id=47884971)
+</script>
+
+<script type="text/markdown" id="md-cohere">
+**Domain:** cohere.com · **Relationship:** competitor · **Lens:** competitive_intel (PM, new FM provider)
+
+## TL;DR
+- Cohere lands first major civilian government deployment: **1,400 ISED users on the North platform** ([The Logic](https://thelogic.co/news/exclusive/cohere-deployment-ottawa-north/), 2026-05-08).
+- Aleph Alpha acquisition + $600M Schwarz Group commit anchors a $20B sovereign-AI thesis ([Bloomberg](https://www.bloomberg.com/news/articles/2026-04-24/cohere-to-buy-germany-s-aleph-alpha-wins-schwarz-investment)).
+- Critical Terrarium sandbox CVE (9.3) is the loudest sentiment signal in the window.
+
+## News & announcements
+- May 8: Cohere signs ISED contract; up to 1,400 federal public servants get North access for search, summarization, drafting, decision support, task automation.
+- April 24: Cohere–Aleph Alpha merger announced in Berlin with Canadian + German digital ministers attending; positioned as transatlantic sovereign-AI alternative.
+
+## Product / feature launches
+- No material product launch in the last 48h. Most recent shipped: Cohere Transcribe ASR model (open-source, #1 on HF Open ASR Leaderboard, 5.42% WER) on 2026-03-26.
+- Command A Translate (23-language MT model) referenced as state-of-the-art in early 2026 coverage [single-source].
+
+## Hiring & org changes
+- 109 open Cohere roles listed as of May 2026; recent emphasis on Brand Marketing, Social Content, Internal Communications [single-source].
+- Aleph Alpha integration implies imminent Europe-side org consolidation; no executive-level reorg reported in last 48h.
+
+## Funding / financial signals
+- Schwarz Group committing $600M (€500M structured financing) to lead Cohere Series E, expected to close in 2026.
+- Combined entity valued at ~$20B post-merger.
+- 2025 ARR closed at $240M vs $200M target.
+
+## Pricing & packaging changes
+- No material pricing change in the last 48h. Standing rate card: Command R7B $0.0375/$0.15 per 1M tokens; Command R+ $2.50/$10; Embed v3 $0.10/1M; Rerank v3 $2.00/1M.
+- Reminder: fine-tuning for command-light, command, command-r, classify, rerank was retired 2025-09-15.
+
+## Public sentiment
+- **Terrarium sandbox-escape CVE-2026-5752 (CVSS 9.3, root RCE)** is the dominant negative signal in the cycle.
+- Sovereign-AI narrative drawing positive coverage in Canadian + EU press; some skepticism on whether Cohere is "Canadian enough" [single-source].
+- No material HN/Reddit thread in the 48h window.
+
+## Leadership moves
+- No material signal in the last 48h. Aidan Gomez remains CEO; Nick Frosst publicly framing the merger around "real-world problems."
+
+## Customer wins / logos
+- Innovation, Science and Economic Development Canada (ISED): 1,400-seat North deployment, first major civilian-government rollout.
+- German federal government expected to be anchor customer for combined Cohere/Aleph Alpha entity.
+- Schwarz Group (parent of Lidl/Kaufland) committing to run combined entity on STACKIT sovereign cloud — implicit logo.
+
+## What this means for us
+- Cohere is doubling down on **"sovereign + regulated buyer" as the moat US labs can't easily copy** — if our wedge is enterprise, we need a credible sovereign/data-residency story (deployment options, EU/CA hosting partner) before pitching financial-services or public-sector accounts.
+- The North platform is shifting Cohere from API vendor to agentic workspace; selling raw model access into Cohere's installed base will get harder. **Counter by leading with model quality + per-token economics** where Command R+ at $2.50/$10 is the price ceiling we must undercut on similar quality tiers.
+
+## Sources
+- [The Logic — ISED Cohere North deal](https://thelogic.co/news/exclusive/cohere-deployment-ottawa-north/) (2026-05-08)
+- [Bloomberg — Aleph Alpha acquisition + Schwarz](https://www.bloomberg.com/news/articles/2026-04-24/cohere-to-buy-germany-s-aleph-alpha-wins-schwarz-investment) (2026-04-24)
+- [CNBC — Sovereign AI Europe expansion](https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html) (2026-04-24)
+- [TechCrunch — Why Cohere is merging](https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/) (2026-04-25)
+- [The Hacker News — Terrarium CVE](https://thehackernews.com/2026/04/cohere-ai-terrarium-sandbox-flaw.html)
+- [CNBC — Cohere ARR / IPO](https://www.cnbc.com/2026/02/13/ai-startup-cohere-revenue-ipo.html) (2026-02-13)
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+<script>
+  // Sections that stay open by default in each company brief.
+  const KEEP_OPEN = ['TL;DR', 'What this means for us'];
+  // The "Sources" section gets put into a less-prominent details block at the end.
+  const SOURCES_HEADER = 'Sources';
+
+  const targets = document.querySelectorAll('.md[data-md-id]');
+  targets.forEach(target => {
+    const id = target.getAttribute('data-md-id');
+    const src = document.getElementById(id);
+    if (!src) return;
+    const md = src.textContent;
+    const html = marked.parse(md);
+    target.innerHTML = html;
+
+    // Walk the rendered HTML and group h2 + following nodes into either
+    //   - tldr-block (TL;DR)            — open, highlighted card
+    //   - takeaway   (What this means)  — open, neutral card
+    //   - details    (everything else)  — collapsed
+    //   - sources-block (Sources)       — collapsed, muted
+    const newRoot = document.createDocumentFragment();
+    const children = Array.from(target.childNodes);
+    let i = 0;
+
+    // first paragraph: domain/relationship/lens line — pass through
+    while (i < children.length && children[i].nodeName !== 'H2') {
+      newRoot.appendChild(children[i].cloneNode(true));
+      i++;
+    }
+
+    while (i < children.length) {
+      const node = children[i];
+      if (node.nodeName !== 'H2') { i++; continue; }
+      const headingText = node.textContent.trim();
+
+      // collect all sibling nodes until the next h2
+      const bodyNodes = [];
+      i++;
+      while (i < children.length && children[i].nodeName !== 'H2') {
+        bodyNodes.push(children[i]);
+        i++;
+      }
+
+      if (headingText === 'TL;DR') {
+        const block = document.createElement('div');
+        block.className = 'tldr-block';
+        const h = document.createElement('h2');
+        h.className = 'tldr-h';
+        h.textContent = 'The TL;DR';
+        block.appendChild(h);
+        bodyNodes.forEach(n => block.appendChild(n.cloneNode(true)));
+        newRoot.appendChild(block);
+      } else if (headingText === 'What this means for us') {
+        const block = document.createElement('div');
+        block.className = 'takeaway';
+        const h = document.createElement('h2');
+        h.textContent = 'What this means for us';
+        block.appendChild(h);
+        bodyNodes.forEach(n => block.appendChild(n.cloneNode(true)));
+        newRoot.appendChild(block);
+      } else if (headingText === SOURCES_HEADER) {
+        const det = document.createElement('details');
+        det.className = 'sources-block';
+        const sum = document.createElement('summary');
+        sum.textContent = 'Sources';
+        det.appendChild(sum);
+        bodyNodes.forEach(n => det.appendChild(n.cloneNode(true)));
+        newRoot.appendChild(det);
+      } else {
+        const det = document.createElement('details');
+        const sum = document.createElement('summary');
+        sum.innerHTML = `<span>${headingText}</span><span class="chev">›</span>`;
+        det.appendChild(sum);
+        const body = document.createElement('div');
+        body.className = 'body';
+        bodyNodes.forEach(n => body.appendChild(n.cloneNode(true)));
+        det.appendChild(body);
+        newRoot.appendChild(det);
+      }
+    }
+
+    target.innerHTML = '';
+    target.appendChild(newRoot);
+  });
+
+  // Active-section highlighting in TOC.
+  const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+  const sections = Array.from(tocLinks)
+    .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+    .filter(Boolean);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        tocLinks.forEach(a => a.classList.toggle('active',
+          a.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
