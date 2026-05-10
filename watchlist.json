@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "updated_at": "2026-05-10T00:00:00Z",
+  "context": {
+    "tracker_role": "pm",
+    "tracker_role_other": null,
+    "purpose": "competitive_intel"
+  },
+  "companies": [
+    {
+      "name": "OpenAI",
+      "domain": "openai.com",
+      "aliases": [],
+      "relationship": "competitor",
+      "focus_areas": ["pricing moves", "model release cadence", "enterprise tier", "agentic product"],
+      "added_at": "2026-05-10"
+    },
+    {
+      "name": "Anthropic",
+      "domain": "anthropic.com",
+      "aliases": [],
+      "relationship": "competitor",
+      "focus_areas": ["safety positioning", "enterprise sales", "Claude pricing tiers", "agent capability"],
+      "added_at": "2026-05-10"
+    },
+    {
+      "name": "Google",
+      "domain": "deepmind.google",
+      "aliases": ["DeepMind", "Gemini"],
+      "relationship": "competitor",
+      "focus_areas": ["Gemini release cadence", "Vertex pricing", "distribution into Google products"],
+      "added_at": "2026-05-10"
+    },
+    {
+      "name": "Meta",
+      "domain": "ai.meta.com",
+      "aliases": ["Llama", "Meta AI"],
+      "relationship": "competitor",
+      "focus_areas": ["Llama release cadence", "open-weight licence shifts", "multimodal capability"],
+      "added_at": "2026-05-10"
+    },
+    {
+      "name": "Mistral",
+      "domain": "mistral.ai",
+      "aliases": [],
+      "relationship": "competitor",
+      "focus_areas": ["open vs closed strategy", "EU regulatory posture", "enterprise deals"],
+      "added_at": "2026-05-10"
+    },
+    {
+      "name": "xAI",
+      "domain": "x.ai",
+      "aliases": ["Grok"],
+      "relationship": "competitor",
+      "focus_areas": ["Grok release pace", "Colossus compute build-out", "X integration", "pricing"],
+      "added_at": "2026-05-10"
+    },
+    {
+      "name": "DeepSeek",
+      "domain": "deepseek.com",
+      "aliases": [],
+      "relationship": "competitor",
+      "focus_areas": ["pricing moves", "model release cadence", "training-cost claims"],
+      "added_at": "2026-05-10"
+    },
+    {
+      "name": "Cohere",
+      "domain": "cohere.com",
+      "aliases": [],
+      "relationship": "competitor",
+      "focus_areas": ["enterprise wins", "fine-tuning", "pricing", "customer logos"],
+      "added_at": "2026-05-10"
+    }
+  ],
+  "dimensions": [
+    { "id": "news",          "label": "News & announcements",        "enabled": true, "weight": 1 },
+    { "id": "product",       "label": "Product / feature launches",  "enabled": true, "weight": 1 },
+    { "id": "hiring",        "label": "Hiring & org changes",        "enabled": true, "weight": 1 },
+    { "id": "funding",       "label": "Funding / financial signals", "enabled": true, "weight": 1 },
+    { "id": "pricing",       "label": "Pricing & packaging changes", "enabled": true, "weight": 1 },
+    { "id": "sentiment",     "label": "Public sentiment",            "enabled": true, "weight": 1 },
+    { "id": "leadership",    "label": "Leadership moves",            "enabled": true, "weight": 1 },
+    { "id": "customer_wins", "label": "Customer wins / logos",       "enabled": true, "weight": 1 }
+  ],
+  "delivery": {
+    "cadence": "daily",
+    "time_local": "07:00",
+    "depth": "standard",
+    "format": "markdown"
+  }
+}

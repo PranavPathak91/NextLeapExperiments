@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/pranav -maxdepth 4 -type d -iname \"*superhuman*\" 2>/dev/null)",
+      "Bash(mkdir -p /Users/pranav/NextLeapExperiments/.claude/skills/setup-watchlist)",
+      "Bash(mkdir -p /Users/pranav/NextLeapExperiments/.claude/skills/research)",
+      "WebSearch"
+    ]
+  }
+}

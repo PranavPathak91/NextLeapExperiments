@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MARKET INTEL // 2026-05-10</title>
+<style>
+  :root {
+    --dark: #0A0E27;
+    --dark-2: #0F1419;
+    --white: #FFFFFF;
+    --gray: #FAFBFC;
+    --cyan: #00D4EE;
+    --lime: #B8F000;
+    --magenta: #F0005E;
+    --text-primary: #0A0E27;
+    --text-secondary: #475569;
+    --text-tertiary: #64748B;
+    --text-light: #94A3B8;
+    --border: #000000;
+    --mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
+
+  html, body {
+    font-family: var(--mono);
+    background: var(--gray);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ─── HEADER ─────────────────────────────────────────────────────── */
+  .top-bar {
+    background: var(--dark);
+    color: var(--white);
+    border-bottom: 4px solid var(--border);
+  }
+  .top-bar-inner {
+    max-width: 1280px; margin: 0 auto;
+    padding: 28px 32px;
+    display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 32px;
+  }
+  .brand {
+    font-weight: 900; font-size: 42px; letter-spacing: -1px; line-height: 1;
+  }
+  .brand .slash { color: var(--cyan); }
+  .brand-sub {
+    margin-top: 10px;
+    font-size: 12px; color: var(--text-light); letter-spacing: 2px; font-weight: 700;
+  }
+  .stamp {
+    text-align: right;
+    display: flex; flex-direction: column; gap: 8px; align-items: flex-end;
+  }
+  .date-block {
+    background: var(--cyan); color: var(--dark);
+    padding: 10px 16px;
+    border: 4px solid var(--border);
+    font-weight: 900; font-size: 14px; letter-spacing: 1px;
+  }
+  .stat-row {
+    display: flex; gap: 8px;
+  }
+  .stat {
+    border: 2px solid var(--white);
+    padding: 6px 10px;
+    font-size: 11px; font-weight: 900; letter-spacing: 1px;
+  }
+  .stat strong { color: var(--lime); }
+
+  /* ─── TABS ───────────────────────────────────────────────────────── */
+  .tabs {
+    background: var(--white);
+    border-bottom: 4px solid var(--border);
+  }
+  .tabs-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: flex; align-items: stretch;
+  }
+  .tab {
+    padding: 18px 28px;
+    font-size: 13px; font-weight: 900; letter-spacing: 2px;
+    border-right: 4px solid var(--border);
+    cursor: pointer;
+    transition: all 150ms ease;
+  }
+  .tab:hover { background: var(--gray); }
+  .tab.active {
+    background: var(--dark); color: var(--white);
+  }
+  .tab .num { color: var(--text-light); font-weight: 700; margin-left: 8px; }
+  .tab.active .num { color: var(--cyan); }
+  .tab-spacer { flex: 1; border-right: 0; }
+  .tab-action {
+    padding: 18px 28px;
+    font-size: 12px; font-weight: 900; letter-spacing: 2px;
+    background: var(--lime); color: var(--dark);
+    border-left: 4px solid var(--border);
+    cursor: pointer;
+    transition: all 200ms ease;
+  }
+  .tab-action:hover { transform: translate(2px, -4px); }
+
+  /* ─── TODAY'S CALL STRIP ─────────────────────────────────────────── */
+  .call-strip {
+    background: var(--lime);
+    border-bottom: 4px solid var(--border);
+  }
+  .call-inner {
+    max-width: 1280px; margin: 0 auto;
+    padding: 24px 32px;
+    display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: start;
+  }
+  .call-label {
+    font-size: 11px; font-weight: 900; letter-spacing: 3px;
+    border: 3px solid var(--border);
+    padding: 8px 10px;
+    background: var(--dark); color: var(--lime);
+    width: fit-content;
+  }
+  .call-label-sub {
+    margin-top: 8px;
+    font-size: 11px; color: var(--dark); font-weight: 700;
+  }
+  .call-items {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;
+  }
+  .call-item {
+    border-left: 4px solid var(--dark);
+    padding-left: 16px;
+  }
+  .call-item .num {
+    font-size: 11px; font-weight: 900; color: var(--dark);
+    letter-spacing: 2px; margin-bottom: 6px;
+  }
+  .call-item .head {
+    font-size: 14px; font-weight: 900; color: var(--dark); line-height: 1.3;
+  }
+  .call-item .ref {
+    margin-top: 6px; font-size: 11px; color: var(--dark); opacity: 0.65; font-weight: 700;
+  }
+
+  /* ─── MAIN ───────────────────────────────────────────────────────── */
+  main {
+    max-width: 1280px; margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  .section-head {
+    display: flex; align-items: end; justify-content: space-between;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 4px solid var(--border);
+  }
+  .section-head h2 {
+    font-size: 32px; font-weight: 900; letter-spacing: -0.5px;
+  }
+  .section-head h2 .accent { color: var(--magenta); }
+  .section-head .meta {
+    font-size: 11px; font-weight: 700; color: var(--text-tertiary);
+    letter-spacing: 2px;
+  }
+
+  .filter-row {
+    display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap;
+  }
+  .chip {
+    border: 2px solid var(--border);
+    padding: 6px 12px;
+    font-size: 11px; font-weight: 900; letter-spacing: 1.5px;
+    background: var(--white);
+    cursor: pointer;
+    transition: all 150ms ease;
+  }
+  .chip:hover { background: var(--dark); color: var(--white); }
+  .chip.active { background: var(--dark); color: var(--cyan); }
+
+  /* ─── COMPANY GRID ───────────────────────────────────────────────── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--white);
+    border: 4px solid var(--border);
+    display: flex; flex-direction: column;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    cursor: pointer;
+  }
+  .card:hover { transform: translate(2px, -4px); }
+
+  .card-head {
+    padding: 20px 22px 16px;
+    border-bottom: 3px solid var(--border);
+    display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: start;
+  }
+  .card-name {
+    font-size: 22px; font-weight: 900; letter-spacing: -0.5px; line-height: 1;
+  }
+  .card-domain {
+    margin-top: 6px;
+    font-size: 11px; color: var(--text-tertiary); font-weight: 700; letter-spacing: 1px;
+  }
+
+  .badge {
+    border: 2px solid var(--border);
+    padding: 5px 9px;
+    font-size: 10px; font-weight: 900; letter-spacing: 2px;
+    white-space: nowrap;
+  }
+  .badge.cyan    { background: var(--cyan);    color: var(--dark); }
+  .badge.lime    { background: var(--lime);    color: var(--dark); }
+  .badge.magenta { background: var(--magenta); color: var(--white); }
+  .badge.dark    { background: var(--dark);    color: var(--white); }
+  .badge.white   { background: var(--white);   color: var(--dark); }
+
+  .tldr {
+    padding: 18px 22px;
+    border-bottom: 3px solid var(--border);
+    background: var(--gray);
+  }
+  .tldr-label {
+    font-size: 10px; font-weight: 900; letter-spacing: 2px;
+    color: var(--text-tertiary); margin-bottom: 10px;
+  }
+  .tldr ul { list-style: none; }
+  .tldr li {
+    font-size: 13px; line-height: 1.5; font-weight: 400;
+    padding: 6px 0 6px 18px;
+    position: relative;
+  }
+  .tldr li::before {
+    content: '▸';
+    position: absolute; left: 0; top: 6px;
+    color: var(--magenta);
+    font-weight: 900;
+  }
+  .tldr li strong { font-weight: 900; }
+
+  .signal-row {
+    padding: 14px 22px;
+    border-bottom: 3px solid var(--border);
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+  }
+  .signal {
+    text-align: left;
+    border-right: 2px solid var(--border);
+    padding-right: 8px;
+  }
+  .signal:last-child { border-right: 0; }
+  .signal-label {
+    font-size: 9px; font-weight: 900; letter-spacing: 1.5px;
+    color: var(--text-tertiary);
+  }
+  .signal-value {
+    font-size: 18px; font-weight: 900;
+    margin-top: 2px;
+  }
+  .signal-value.hot     { color: var(--magenta); }
+  .signal-value.warm    { color: var(--cyan); }
+  .signal-value.zero    { color: var(--text-light); }
+
+  .card-foot {
+    padding: 14px 22px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--white);
+  }
+  .sources {
+    font-size: 11px; color: var(--text-tertiary); font-weight: 700; letter-spacing: 1px;
+  }
+  .open {
+    font-size: 11px; font-weight: 900; letter-spacing: 2px;
+    color: var(--dark);
+  }
+  .open .arrow { color: var(--cyan); margin-left: 4px; }
+
+  /* ─── SIDE: THEMES ROW ───────────────────────────────────────────── */
+  .themes {
+    margin-top: 56px;
+    border: 4px solid var(--border);
+    background: var(--dark); color: var(--white);
+  }
+  .themes-head {
+    padding: 24px 28px;
+    border-bottom: 4px solid var(--border);
+    display: flex; align-items: end; justify-content: space-between;
+  }
+  .themes-head h3 {
+    font-size: 24px; font-weight: 900; letter-spacing: -0.5px;
+  }
+  .themes-head h3 .accent { color: var(--cyan); }
+  .themes-head .meta {
+    font-size: 11px; color: var(--text-light); letter-spacing: 2px; font-weight: 700;
+  }
+  .themes-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+  }
+  .theme {
+    padding: 24px 28px;
+    border-right: 4px solid var(--border);
+  }
+  .theme:last-child { border-right: 0; }
+  .theme-num {
+    font-size: 11px; font-weight: 900; letter-spacing: 3px; color: var(--cyan);
+    margin-bottom: 12px;
+  }
+  .theme-head {
+    font-size: 18px; font-weight: 900; line-height: 1.2; margin-bottom: 12px;
+  }
+  .theme-body {
+    font-size: 13px; color: var(--text-light); line-height: 1.5;
+  }
+  .theme-tags {
+    margin-top: 14px; display: flex; gap: 6px; flex-wrap: wrap;
+  }
+  .theme-tag {
+    border: 2px solid var(--white);
+    padding: 3px 7px;
+    font-size: 9px; font-weight: 900; letter-spacing: 1.5px;
+  }
+
+  /* ─── FOOTER ─────────────────────────────────────────────────────── */
+  footer {
+    border-top: 4px solid var(--border);
+    background: var(--cyan);
+  }
+  .foot-inner {
+    max-width: 1280px; margin: 0 auto;
+    padding: 20px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 11px; font-weight: 900; letter-spacing: 2px; color: var(--dark);
+  }
+  .foot-inner .cmd {
+    background: var(--dark); color: var(--cyan);
+    padding: 6px 10px; border: 3px solid var(--border);
+  }
+
+  /* ─── DISCLOSURE BANNER ──────────────────────────────────────────── */
+  .mock-banner {
+    background: var(--magenta); color: var(--white);
+    text-align: center;
+    padding: 8px;
+    font-size: 11px; font-weight: 900; letter-spacing: 2px;
+    border-bottom: 4px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+  <div class="mock-banner">⚠ MOCK / DESIGN SPRINT V0 — DATA IS PLACEHOLDER ⚠</div>
+
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <div>
+        <div class="brand">MARKET<span class="slash">/</span>INTEL</div>
+        <div class="brand-sub">DAILY WATCHLIST BRIEF · LOCAL // CLAUDE CODE</div>
+      </div>
+      <div class="stamp">
+        <div class="date-block">[ MON · 10 MAY 2026 · 08:00 ]</div>
+        <div class="stat-row">
+          <div class="stat">COMPANIES <strong>6</strong></div>
+          <div class="stat">SIGNALS <strong>14</strong></div>
+          <div class="stat">SOURCES <strong>38</strong></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <div class="tabs-inner">
+      <div class="tab active">TODAY <span class="num">14</span></div>
+      <div class="tab">TIMELINE</div>
+      <div class="tab">THEMES <span class="num">3</span></div>
+      <div class="tab">WATCHLIST <span class="num">6</span></div>
+      <div class="tab tab-spacer"></div>
+      <div class="tab-action">▶ RUN /research</div>
+    </div>
+  </nav>
+
+  <section class="call-strip">
+    <div class="call-inner">
+      <div>
+        <div class="call-label">TODAY'S CALL</div>
+        <div class="call-label-sub">3 things that matter ↓</div>
+      </div>
+      <div class="call-items">
+        <div class="call-item">
+          <div class="num">01</div>
+          <div class="head">Stablecoin rails are now table stakes — 4 of 6 shipped or announced this week.</div>
+          <div class="ref">STRIPE · ADYEN · BLOCK · MOLLIE</div>
+        </div>
+        <div class="call-item">
+          <div class="num">02</div>
+          <div class="head">Checkout.com lost a second C-level in 30 days. Watch their enterprise pipeline.</div>
+          <div class="ref">CHECKOUT.COM</div>
+        </div>
+        <div class="call-item">
+          <div class="num">03</div>
+          <div class="head">Wise's Q1 print resets the bar on take-rate compression. Repricing pressure incoming.</div>
+          <div class="ref">WISE · KNOCK-ON: ADYEN, MOLLIE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="section-head">
+      <h2>WATCHLIST <span class="accent">// 6</span></h2>
+      <div class="meta">SORT: NEW SIGNALS ↓</div>
+    </div>
+
+    <div class="filter-row">
+      <div class="chip active">ALL</div>
+      <div class="chip">NEW MOVES</div>
+      <div class="chip">FUNDING</div>
+      <div class="chip">PRODUCT</div>
+      <div class="chip">HIRING</div>
+      <div class="chip">PRICING</div>
+      <div class="chip">QUIET TODAY</div>
+    </div>
+
+    <div class="grid">
+
+      <!-- STRIPE -->
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-name">STRIPE</div>
+            <div class="card-domain">stripe.com</div>
+          </div>
+          <div class="badge magenta">HOT · 5 NEW</div>
+        </div>
+        <div class="tldr">
+          <div class="tldr-label">TL;DR</div>
+          <ul>
+            <li><strong>Stablecoin Financial Accounts</strong> launched in 5 new markets — direct shot at Adyen's treasury play.</li>
+            <li>Hired ex-Plaid VP of Product to lead embedded finance.</li>
+            <li>Pricing page quietly added an "Enterprise" tier — gated, no list price.</li>
+          </ul>
+        </div>
+        <div class="signal-row">
+          <div class="signal"><div class="signal-label">NEWS</div><div class="signal-value hot">3</div></div>
+          <div class="signal"><div class="signal-label">PRODUCT</div><div class="signal-value warm">1</div></div>
+          <div class="signal"><div class="signal-label">HIRING</div><div class="signal-value warm">1</div></div>
+          <div class="signal"><div class="signal-label">FUND</div><div class="signal-value zero">0</div></div>
+        </div>
+        <div class="card-foot">
+          <div class="sources">8 SOURCES · TC, Bloomberg, +6</div>
+          <div class="open">OPEN BRIEF<span class="arrow">→</span></div>
+        </div>
+      </article>
+
+      <!-- ADYEN -->
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-name">ADYEN</div>
+            <div class="card-domain">adyen.com</div>
+          </div>
+          <div class="badge cyan">3 NEW</div>
+        </div>
+        <div class="tldr">
+          <div class="tldr-label">TL;DR</div>
+          <ul>
+            <li>Q1 trading update beat on volume, missed on take-rate (-9 bps YoY).</li>
+            <li>Announced direct USDC settlement for North American merchants — ships Q3.</li>
+            <li>Analyst day calendared for 2026-06-14.</li>
+          </ul>
+        </div>
+        <div class="signal-row">
+          <div class="signal"><div class="signal-label">NEWS</div><div class="signal-value warm">2</div></div>
+          <div class="signal"><div class="signal-label">PRODUCT</div><div class="signal-value warm">1</div></div>
+          <div class="signal"><div class="signal-label">HIRING</div><div class="signal-value zero">0</div></div>
+          <div class="signal"><div class="signal-label">FUND</div><div class="signal-value zero">0</div></div>
+        </div>
+        <div class="card-foot">
+          <div class="sources">6 SOURCES · Reuters, FT, +4</div>
+          <div class="open">OPEN BRIEF<span class="arrow">→</span></div>
+        </div>
+      </article>
+
+      <!-- CHECKOUT.COM -->
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-name">CHECKOUT.COM</div>
+            <div class="card-domain">checkout.com</div>
+          </div>
+          <div class="badge magenta">HOT · LEAD CHG</div>
+        </div>
+        <div class="tldr">
+          <div class="tldr-label">TL;DR</div>
+          <ul>
+            <li><strong>CRO departed</strong> — second C-level exit in 30 days. No replacement named.</li>
+            <li>Glassdoor sentiment slipped to 3.1 (was 3.6 in Feb).</li>
+            <li>One enterprise win called out (mid-cap retailer, undisclosed).</li>
+          </ul>
+        </div>
+        <div class="signal-row">
+          <div class="signal"><div class="signal-label">NEWS</div><div class="signal-value warm">1</div></div>
+          <div class="signal"><div class="signal-label">PRODUCT</div><div class="signal-value zero">0</div></div>
+          <div class="signal"><div class="signal-label">HIRING</div><div class="signal-value hot">2</div></div>
+          <div class="signal"><div class="signal-label">FUND</div><div class="signal-value zero">0</div></div>
+        </div>
+        <div class="card-foot">
+          <div class="sources">5 SOURCES · LinkedIn, Sifted, +3</div>
+          <div class="open">OPEN BRIEF<span class="arrow">→</span></div>
+        </div>
+      </article>
+
+      <!-- WISE -->
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-name">WISE</div>
+            <div class="card-domain">wise.com</div>
+          </div>
+          <div class="badge cyan">2 NEW</div>
+        </div>
+        <div class="tldr">
+          <div class="tldr-label">TL;DR</div>
+          <ul>
+            <li>Q1 print: cross-border volume +24% YoY, take-rate compressed 11 bps.</li>
+            <li>Quietly cut consumer FX fees in 3 corridors — pricing test, not blanket.</li>
+            <li>Reddit chatter (r/UKPersonalFinance) skewing positive on the cut.</li>
+          </ul>
+        </div>
+        <div class="signal-row">
+          <div class="signal"><div class="signal-label">NEWS</div><div class="signal-value warm">1</div></div>
+          <div class="signal"><div class="signal-label">PRODUCT</div><div class="signal-value zero">0</div></div>
+          <div class="signal"><div class="signal-label">HIRING</div><div class="signal-value zero">0</div></div>
+          <div class="signal"><div class="signal-label">FUND</div><div class="signal-value warm">1</div></div>
+        </div>
+        <div class="card-foot">
+          <div class="sources">7 SOURCES · LSE, Reuters, +5</div>
+          <div class="open">OPEN BRIEF<span class="arrow">→</span></div>
+        </div>
+      </article>
+
+      <!-- MOLLIE -->
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-name">MOLLIE</div>
+            <div class="card-domain">mollie.com</div>
+          </div>
+          <div class="badge lime">2 NEW</div>
+        </div>
+        <div class="tldr">
+          <div class="tldr-label">TL;DR</div>
+          <ul>
+            <li>Shipped USDC checkout for EU SMBs — first major EU PSP to do so.</li>
+            <li>Hiring spike on engineering (+18 reqs in 2 weeks, mostly platform).</li>
+            <li>No funding chatter; cap table unchanged since 2023.</li>
+          </ul>
+        </div>
+        <div class="signal-row">
+          <div class="signal"><div class="signal-label">NEWS</div><div class="signal-value warm">1</div></div>
+          <div class="signal"><div class="signal-label">PRODUCT</div><div class="signal-value warm">1</div></div>
+          <div class="signal"><div class="signal-label">HIRING</div><div class="signal-value warm">1</div></div>
+          <div class="signal"><div class="signal-label">FUND</div><div class="signal-value zero">0</div></div>
+        </div>
+        <div class="card-foot">
+          <div class="sources">4 SOURCES · TFN, LinkedIn, +2</div>
+          <div class="open">OPEN BRIEF<span class="arrow">→</span></div>
+        </div>
+      </article>
+
+      <!-- BLOCK -->
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-name">BLOCK</div>
+            <div class="card-domain">block.xyz</div>
+          </div>
+          <div class="badge dark">QUIET · 1</div>
+        </div>
+        <div class="tldr">
+          <div class="tldr-label">TL;DR</div>
+          <ul>
+            <li>Cash App stablecoin pilot continues — no public announcement today.</li>
+            <li>No press, no hiring delta, no pricing change in the last 24h.</li>
+            <li>Watchlist note: earnings 2026-05-22.</li>
+          </ul>
+        </div>
+        <div class="signal-row">
+          <div class="signal"><div class="signal-label">NEWS</div><div class="signal-value zero">0</div></div>
+          <div class="signal"><div class="signal-label">PRODUCT</div><div class="signal-value zero">0</div></div>
+          <div class="signal"><div class="signal-label">HIRING</div><div class="signal-value zero">0</div></div>
+          <div class="signal"><div class="signal-label">FUND</div><div class="signal-value zero">0</div></div>
+        </div>
+        <div class="card-foot">
+          <div class="sources">2 SOURCES · SEC, Press</div>
+          <div class="open">OPEN BRIEF<span class="arrow">→</span></div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- THEMES -->
+    <section class="themes">
+      <div class="themes-head">
+        <h3>CROSS-CUTTING THEMES <span class="accent">// 3</span></h3>
+        <div class="meta">DERIVED FROM 6 BRIEFS</div>
+      </div>
+      <div class="themes-grid">
+        <div class="theme">
+          <div class="theme-num">THEME 01</div>
+          <div class="theme-head">Stablecoins crossed the table-stakes line.</div>
+          <div class="theme-body">4 of 6 watched companies shipped or announced stablecoin rails in 7 days. Treat it as a feature gap, not a differentiator.</div>
+          <div class="theme-tags">
+            <span class="theme-tag">STRIPE</span>
+            <span class="theme-tag">ADYEN</span>
+            <span class="theme-tag">MOLLIE</span>
+            <span class="theme-tag">BLOCK</span>
+          </div>
+        </div>
+        <div class="theme">
+          <div class="theme-num">THEME 02</div>
+          <div class="theme-head">Take-rate compression is broad, not local.</div>
+          <div class="theme-body">Wise printed -11 bps, Adyen -9. Public pricing pages haven't moved yet, but expect repricing within 2 quarters.</div>
+          <div class="theme-tags">
+            <span class="theme-tag">WISE</span>
+            <span class="theme-tag">ADYEN</span>
+            <span class="theme-tag">↘ MOLLIE</span>
+          </div>
+        </div>
+        <div class="theme">
+          <div class="theme-num">THEME 03</div>
+          <div class="theme-head">Talent moves are louder than press releases.</div>
+          <div class="theme-body">Stripe poached Plaid's product VP. Checkout.com lost its CRO. Hiring and exits are the leading indicator this week — not earnings.</div>
+          <div class="theme-tags">
+            <span class="theme-tag">STRIPE</span>
+            <span class="theme-tag">CHECKOUT.COM</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-inner">
+      <div>GENERATED 2026-05-10 08:00 LOCAL · 38 SOURCES · DIFF VS YESTERDAY: +14 / -2</div>
+      <div class="cmd">$ /research</div>
+    </div>
+  </footer>
+
+</body>
+</html>
